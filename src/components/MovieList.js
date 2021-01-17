@@ -7,7 +7,7 @@ const MovieList = ({ movies, nominateComponent }) => {
   return (
     <div className="movie-list">
       {movies.map((movie) => (
-        <div className="movie">
+        <div className="movie" key={movie.imdbID}>
           <img src={movie.Poster} alt="movie"></img>
           <div className="overlay"><NominateComponent /></div>
         </div>
