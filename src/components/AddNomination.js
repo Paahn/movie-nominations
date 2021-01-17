@@ -4,7 +4,7 @@ import "../styles/AddNomination.css";
 
 const AddNomination = () => {
   return (
-    <div>
+    <div className="nomination-container">
       <span className="nomination"><LibraryAddIcon />Nominate</span>
     </div>
   )
