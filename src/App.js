@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
+
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [inputMovies, setInputMovies] = useState("");
 
   const getMovies = async () => {
     const url = `http://www.omdbapi.com/?s=wasp&apikey=a81113fc`;
@@ -26,7 +28,7 @@ const App = () => {
         <h1>The Shoppies</h1>
       </div>
       <div>
-        <SearchBar />
+        <SearchBar inputMovies={inputMovies} setInputMovies={setInputMovies} />
       </div>
       <div className="container">
         <MovieList movies={movies} />
