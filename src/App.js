@@ -8,7 +8,7 @@ const App = () => {
   const [inputMovies, setInputMovies] = useState("");
 
   const getMovies = async () => {
-    const url = `http://www.omdbapi.com/?s=wasp&apikey=a81113fc`;
+    const url = `http://www.omdbapi.com/?s=${inputMovies}&apikey=a81113fc`;
     await fetch(url)
     .then ((response) => response.json())
     .then ((data) => {
@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [inputMovies]);
 
   return (
     <div className="shoppies-app">
