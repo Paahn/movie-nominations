@@ -1,9 +1,10 @@
 import React from "react";
+import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 
-function AddNomination() {
+const AddNomination = () => {
   return (
     <div>
-      
+      <span><LibraryAddIcon />Nominate</span>
     </div>
   )
 }
