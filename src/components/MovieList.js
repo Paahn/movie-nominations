@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/MovieList.css";
 
-const MovieList = ({ movies, nominateComponent }) => {
+const MovieList = ({ movies, nominateComponent, handleNominations }) => {
   const NominateComponent = nominateComponent;
 
   return (
@@ -16,7 +16,9 @@ const MovieList = ({ movies, nominateComponent }) => {
             <div>
               {movie.Year}
             </div>
-            <NominateComponent />
+            <div onClick={() => handleNominations(movie)}>
+              <NominateComponent />
+            </div>
           </div>
         </div>
       ))}

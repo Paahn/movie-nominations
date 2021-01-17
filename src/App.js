@@ -7,6 +7,7 @@ import AddNomination from "./components/AddNomination";
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [inputMovies, setInputMovies] = useState("");
+  const [nominations, setNominations] = useState([]);
 
   const getMovies = async () => {
     const url = `http://www.omdbapi.com/?s=${inputMovies}&apikey=a81113fc`;
@@ -24,6 +25,11 @@ const App = () => {
     getMovies();
   }, [inputMovies]);
 
+  const addNomination = (movie) => {
+      const newNominationList = [...nominations, movie];
+      setNominations(newNominationList);
+  };
+
   return (
     <div className="shoppies-app">
       <div className="heading">
@@ -39,6 +45,7 @@ const App = () => {
         <MovieList
           movies={movies}
           nominateComponent={AddNomination}
+          handleNominations={addNomination}
         />
       </div>
     </div>
