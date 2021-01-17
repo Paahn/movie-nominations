@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
+import "../styles/MovieList.css"
 
 const MovieList = (props) => {
   return (
-    <div>
+    <div className="movie-list">
       {props.movies.map((movie) => (
         <div>
           <img src={movie.Poster} alt="movie"></img>
