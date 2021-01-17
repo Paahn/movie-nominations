@@ -1,17 +1,17 @@
 import React from "react";
 import "../styles/SearchBar.css";
 
-const SearchBar = (props) => {
+const SearchBar = ({ inputMovies, setInputMovies }) => {
   const searchMovies = (event) => {
-    props.setInputMovies(event.target.value);
+    setInputMovies(event.target.value);
   };
-  
+
   return (
     <div>
       <input
         className="search-bar"
         type="search"
-        value={props.inputMovies}
+        value={inputMovies}
         onChange={searchMovies}
         placeholder="Search movies"
         aria-hidden="true"
