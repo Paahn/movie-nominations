@@ -7,6 +7,7 @@ const MovieList = ({ movies }) => {
       {movies.map((movie) => (
         <div className="movie">
           <img src={movie.Poster} alt="movie"></img>
+          <div className="overlay"></div>
         </div>
       ))}
     </div>
