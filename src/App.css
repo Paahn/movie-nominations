@@ -4,6 +4,10 @@ body {
   text-align: center;
 }
 
+.heading {
+  color: #d6d0d0;
+}
+
 .container {
   display: flex;
 }
