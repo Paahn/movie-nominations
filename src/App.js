@@ -48,6 +48,12 @@ const App = () => {
           handleNominations={addNomination}
         />
       </div>
+      <h1>My Nominations</h1>
+      <div className="container">
+        <MovieList
+          movies={nominations}
+        />
+      </div>
     </div>
   );
 };
