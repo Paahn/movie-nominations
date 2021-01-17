@@ -15,6 +15,6 @@
   display: flex;
 }
 
-.MuiSvgIcon-colorPrimary {
+.nomination > .MuiSvgIcon-colorPrimary {
   color: #a39e00;
 }
