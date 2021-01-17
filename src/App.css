@@ -1,0 +1,14 @@
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+.shoppies-app > .container {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}

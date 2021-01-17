@@ -48,9 +48,11 @@ const App = () => {
   }
   ]);
   return (
-    <div className="App">
+    <div className="shoppies-app">
         <h1>The Shoppies</h1>
-        <MovieList movies={movies} />
+        <div className="container">
+          <MovieList movies={movies} />
+        </div>
     </div>
   );
 }
