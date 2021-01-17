@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
+import AddNomination from "./components/AddNomination";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -29,10 +30,16 @@ const App = () => {
         <h1>The Shoppies</h1>
       </div>
       <div>
-        <SearchBar inputMovies={inputMovies} setInputMovies={setInputMovies} />
+        <SearchBar 
+          inputMovies={inputMovies}
+          setInputMovies={setInputMovies}
+        />
       </div>
       <div className="container">
-        <MovieList movies={movies} />
+        <MovieList
+          movies={movies}
+          nominateComponent={AddNomination}
+        />
       </div>
     </div>
   );
