@@ -1,5 +1,13 @@
 .nomination-container {
   display: flex;
+  border: 1px solid #242318;
+  border-radius: 5px;
+  background-color: #242318;
+  padding: 2px;
+}
+
+.nomination-container:hover {
+  cursor: pointer;
 }
 
 .nomination {
