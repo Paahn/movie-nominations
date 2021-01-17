@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import MovieList from "./components/MovieList";
-
+import SearchBar from "./components/SearchBar";
 const App = () => {
   const [movies, setMovies] = useState([]);
 
@@ -18,16 +18,21 @@ const App = () => {
 
   useEffect(() => {
     getMovies();
-  }, [])
+  }, []);
 
   return (
     <div className="shoppies-app">
+      <div>
         <h1>The Shoppies</h1>
-        <div className="container">
-          <MovieList movies={movies} />
-        </div>
+      </div>
+      <div>
+        <SearchBar />
+      </div>
+      <div className="container">
+        <MovieList movies={movies} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,9 @@
+.search-bar {
+  border-radius: 5px;
+  height: 30px;
+  border: greenyellow 2px solid;
+}
+
+.search-bar:focus::placeholder {
+  color: transparent;
+}
