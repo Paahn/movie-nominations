@@ -3,6 +3,7 @@ import './App.css';
 import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
 import AddNomination from "./components/AddNomination";
+import RemoveNomination from "./components/RemoveNomination";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -26,9 +27,16 @@ const App = () => {
   }, [inputMovies]);
 
   const addNomination = (movie) => {
-      const newNominationList = [...nominations, movie];
-      setNominations(newNominationList);
+    const newNominationList = [...nominations, movie];
+    setNominations(newNominationList);
   };
+
+  const removeNomination = (movie) => {
+    const newNominationsList = nominations.filter(
+      (nomination) => nomination.imdbID !== movie.imdbID
+    );
+    setNominations(newNominationsList);
+  }
 
   return (
     <div className="shoppies-app">
@@ -52,6 +60,8 @@ const App = () => {
       <div className="container">
         <MovieList
           movies={nominations}
+          nominateComponent={RemoveNomination}
+          handleNominations={removeNomination}
         />
       </div>
     </div>
