@@ -1,3 +1,19 @@
+.remove-nomination-container {
+  display: flex;
+  border: 1px solid #242318;
+  border-radius: 5px;
+  background-color: #242318;
+  padding: 2px;
+}
+
+.remove-nomination-container:hover {
+  cursor: pointer;
+}
+
 .remove-nomination > .MuiSvgIcon-colorPrimary {
   color: #c41408;
+}
+
+.remove-nomination {
+  display: flex;
 }
