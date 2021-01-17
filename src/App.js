@@ -13,7 +13,8 @@ const App = () => {
     .then ((response) => response.json())
     .then ((data) => {
       if (data.Search) {
-        setMovies(data.Search);
+        const moviesOnly = data.Search.filter(movie => movie.Type === "movie");
+        setMovies(moviesOnly);
       }
     })
   };
