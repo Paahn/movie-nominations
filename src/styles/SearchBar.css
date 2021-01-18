@@ -7,3 +7,7 @@
 .search-bar:focus::placeholder {
   color: transparent;
 }
+
+.search-bar-container {
+  margin-bottom: 50px;
+}

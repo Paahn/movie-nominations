@@ -7,7 +7,7 @@ const SearchBar = ({ inputMovies, setInputMovies }) => {
   };
 
   return (
-    <div>
+    <div className="search-bar-container">
       <input
         className="search-bar"
         type="search"

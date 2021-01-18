@@ -79,7 +79,7 @@ const App = () => {
           handleNominations={addNomination}
         />
       </div>
-      <h1>My Nominations</h1>
+      <h1 className="heading">My Nominations</h1>
       {nominations.length === 5 ? <div className="banner">Nominations Complete!</div> : <></>}
       <div className="container">
         <MovieList
