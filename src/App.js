@@ -11,7 +11,7 @@ const App = () => {
   const [nominations, setNominations] = useState([]);
 
   const getMovies = async () => {
-    const url = `http://www.omdbapi.com/?s=${inputMovies}&apikey=a81113fc`;
+    const url = `https://www.omdbapi.com/?s=${inputMovies}&apikey=a81113fc`;
     await fetch(url)
     .then ((response) => response.json())
     .then ((data) => {
