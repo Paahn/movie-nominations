@@ -80,7 +80,7 @@ const App = () => {
         />
       </div>
       <h1>My Nominations</h1>
-      {nominations.length === 5 ? <div>Nominations Complete!</div> : <></>}
+      {nominations.length === 5 ? <div className="banner">Nominations Complete!</div> : <></>}
       <div className="container">
         <MovieList
           movies={nominations}

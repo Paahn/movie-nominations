@@ -16,3 +16,14 @@ body {
   overflow-x: auto;
   flex-wrap: nowrap;
 }
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rebeccapurple;
+  color: #d6d0d0;
+  height: 100px;
+  width: 300 px;
+  font-size: 56px;
+}
