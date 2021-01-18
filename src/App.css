@@ -6,6 +6,7 @@ body {
 
 .heading {
   color: #d6d0d0;
+  font-size: 36px;
 }
 
 .container {
@@ -25,5 +26,5 @@ body {
   color: #d6d0d0;
   height: 100px;
   width: 300 px;
-  font-size: 56px;
+  font-size: 36px;
 }
