@@ -45,7 +45,7 @@ const App = () => {
 
     const idExists = movieNominationIDs.includes(movie.imdbID);
     
-    if (!idExists) {
+    if (!idExists && nominations.length < 5) {
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
@@ -80,6 +80,7 @@ const App = () => {
         />
       </div>
       <h1>My Nominations</h1>
+      {nominations.length === 5 ? <div>Nominations Complete!</div> : <></>}
       <div className="container">
         <MovieList
           movies={nominations}
