@@ -23,6 +23,15 @@ const App = () => {
   };
 
   useEffect(() => {
+    const movieNominations = JSON.parse(
+      localStorage.getItem("movie-nominations")
+    );
+    if (movieNominations){
+      setNominations(movieNominations);
+    }
+  }, []);
+
+  useEffect(() => {
     getMovies();
   }, [inputMovies]);
 
