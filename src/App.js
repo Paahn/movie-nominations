@@ -9,6 +9,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [inputMovies, setInputMovies] = useState("");
   const [nominations, setNominations] = useState([]);
+  const [nominatedID, setNominatedID] = useState([]);
 
   const getMovies = async () => {
     const url = `https://www.omdbapi.com/?s=${inputMovies}&apikey=a81113fc`;
@@ -32,6 +33,16 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    const movieNominations = JSON.parse(
+      localStorage.getItem("movie-nominations")
+    );
+    if (movieNominations){
+      const movieNominationIDs = nominations.map(nom => nom.imdbID);
+      setNominatedID(movieNominationIDs);
+    }
+  }, []);
+
+  useEffect(() => {
     getMovies();
   }, [inputMovies]);
 
@@ -44,11 +55,19 @@ const App = () => {
     // console.log(movieNominationIDs);
 
     const idExists = movieNominationIDs.includes(movie.imdbID);
+
+
+    // console.log(nominated);
+
     
-    if (!idExists && nominations.length < 5) {
+    if (!idExists) {
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
+    }
+    if (idExists && nominations.length < 5) {
+      const newNominatedList = [...nominatedID, movie.imdbID];
+      setNominatedID(newNominatedList);
     }
 
   };
@@ -77,6 +96,8 @@ const App = () => {
           movies={movies}
           nominateComponent={AddNomination}
           handleNominations={addNomination}
+          nominatedID={nominatedID}
+          isResultsList
         />
       </div>
       <h1 className="heading">My Nominations</h1>
@@ -86,6 +107,7 @@ const App = () => {
           movies={nominations}
           nominateComponent={RemoveNomination}
           handleNominations={removeNomination}
+          nominatedID={nominatedID}
         />
       </div>
     </div>
