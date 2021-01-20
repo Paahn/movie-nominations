@@ -36,9 +36,13 @@ const App = () => {
     const movieNominations = JSON.parse(
       localStorage.getItem("movie-nominations")
     );
+    console.log(`Are you even noms ${JSON.stringify(movieNominations)}`);
     if (movieNominations){
-      const movieNominationIDs = nominations.map(nom => nom.imdbID);
+      console.log(`DID YOU RUN AND YOU GOT NOMINATIONS? ${JSON.stringify(movieNominations)}`);
+      const movieNominationIDs = movieNominations.map(nom => nom.imdbID);
+      console.log(`GOT IDS? ${movieNominationIDs}`);
       setNominatedID(movieNominationIDs);
+      console.log(`Fucking noms ${nominatedID}`);
     }
   }, []);
 
@@ -52,20 +56,17 @@ const App = () => {
 
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
-    // console.log(movieNominationIDs);
+    console.log("ADD NOMINATION SAYS", movieNominationIDs);
 
     const idExists = movieNominationIDs.includes(movie.imdbID);
-
-
-    // console.log(nominated);
-
     
-    if (!idExists) {
+    if (!idExists && nominations.length < 5) {
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
     }
-    if (idExists && nominations.length < 5) {
+    if (!idExists && nominations.length < 5) {
+      console.log(`nominated ID inside addNomination ${nominatedID}`);
       const newNominatedList = [...nominatedID, movie.imdbID];
       setNominatedID(newNominatedList);
     }
@@ -78,6 +79,8 @@ const App = () => {
     );
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
+    const movieNominationIDs = newNominationsList.map(nom => nom.imdbID);
+    setNominatedID(movieNominationIDs);
   }
 
   return (
