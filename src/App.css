@@ -2,6 +2,7 @@ body {
   background-color: #282c34;
   min-height: 100vh;
   text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .heading {
