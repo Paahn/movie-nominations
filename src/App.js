@@ -4,11 +4,13 @@ import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
 import AddNomination from "./components/AddNomination";
 import RemoveNomination from "./components/RemoveNomination";
+import Nominated from "./components/Nominated";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [inputMovies, setInputMovies] = useState("");
   const [nominations, setNominations] = useState([]);
+  const [nominatedID, setNominatedID] = useState([]);
 
   const getMovies = async () => {
     const url = `https://www.omdbapi.com/?s=${inputMovies}&apikey=a81113fc`;
@@ -32,6 +34,16 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    const movieNominations = JSON.parse(
+      localStorage.getItem("movie-nominations")
+    );
+    if (movieNominations){
+      const movieNominationIDs = movieNominations.map(nom => nom.imdbID);
+      setNominatedID(movieNominationIDs);
+    }
+  }, []);
+
+  useEffect(() => {
     getMovies();
   }, [inputMovies]);
 
@@ -41,14 +53,16 @@ const App = () => {
 
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
-    // console.log(movieNominationIDs);
-
     const idExists = movieNominationIDs.includes(movie.imdbID);
     
     if (!idExists && nominations.length < 5) {
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
+    }
+    if (!idExists && nominations.length < 5) {
+      const newNominatedList = [...nominatedID, movie.imdbID];
+      setNominatedID(newNominatedList);
     }
 
   };
@@ -59,6 +73,8 @@ const App = () => {
     );
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
+    const movieNominationIDs = newNominationsList.map(nom => nom.imdbID);
+    setNominatedID(movieNominationIDs);
   }
 
   return (
@@ -77,6 +93,9 @@ const App = () => {
           movies={movies}
           nominateComponent={AddNomination}
           handleNominations={addNomination}
+          nominatedID={nominatedID}
+          isResultsList
+          nominatedComponent={Nominated}
         />
       </div>
       <h1 className="heading">My Nominations</h1>
@@ -86,6 +105,8 @@ const App = () => {
           movies={nominations}
           nominateComponent={RemoveNomination}
           handleNominations={removeNomination}
+          nominatedID={nominatedID}
+          nominatedComponent={Nominated}
         />
       </div>
     </div>
