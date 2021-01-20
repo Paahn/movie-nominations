@@ -60,11 +60,8 @@ const App = () => {
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
     }
-    if (!idExists && nominations.length < 5) {
       const newNominatedList = [...nominatedID, movie.imdbID];
       setNominatedID(newNominatedList);
-    }
-
   };
 
   const removeNomination = (movie) => {
