@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/MovieList.css";
 
-const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, isResultsList }) => {
+const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, isResultsList, nominatedComponent }) => {
   const NominateComponent = nominateComponent;
+  const NominatedComponent = nominatedComponent;
 
   return (
     <div className="movie-list">
@@ -17,7 +18,7 @@ const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, 
               {movie.Year}
             </div>
             <div onClick={() => handleNominations(movie)}>
-              {nominatedID.includes(movie.imdbID) && isResultsList ? (<div>Nominated!</div>) : (<NominateComponent />)}
+              {nominatedID.includes(movie.imdbID) && isResultsList ? (<NominatedComponent />) : (<NominateComponent />)}
             </div>
           </div>
         </div>

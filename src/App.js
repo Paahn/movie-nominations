@@ -4,6 +4,7 @@ import MovieList from "./components/MovieList";
 import SearchBar from "./components/SearchBar";
 import AddNomination from "./components/AddNomination";
 import RemoveNomination from "./components/RemoveNomination";
+import Nominated from "./components/Nominated";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -94,6 +95,7 @@ const App = () => {
           handleNominations={addNomination}
           nominatedID={nominatedID}
           isResultsList
+          nominatedComponent={Nominated}
         />
       </div>
       <h1 className="heading">My Nominations</h1>
@@ -104,6 +106,7 @@ const App = () => {
           nominateComponent={RemoveNomination}
           handleNominations={removeNomination}
           nominatedID={nominatedID}
+          nominatedComponent={Nominated}
         />
       </div>
     </div>
