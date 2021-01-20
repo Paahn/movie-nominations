@@ -1,10 +1,11 @@
 .movie-list {
   display: flex;
   justify-content: flex-start;
+  margin: 0 10px;
 }
 
 .movie {
-  margin: 5px;
+  margin: 15px 5px;
   position: relative;
   transition: transform 0.2s;
 }
@@ -36,7 +37,5 @@
 
 img {
   float: left;
-  width: 300px;
-  height: 300px;
-  object-fit: unset;
+  height: 50vh;
 }
