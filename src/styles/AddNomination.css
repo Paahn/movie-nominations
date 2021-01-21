@@ -6,13 +6,26 @@
   padding: 2px;
 }
 
-.nomination-container:hover {
+.nomination:hover {
   cursor: pointer;
 }
 
 .nomination {
   margin-right: 2px;
   display: flex;
+}
+
+.nomination-unavailable {
+  opacity: 0.4;
+}
+
+.nomination-unavailable:hover {
+  cursor: default;
+}
+
+.nomination-available {
+  color: white;
+  background-color: #242318;
 }
 
 .nomination > .MuiSvgIcon-colorPrimary {
