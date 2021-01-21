@@ -59,9 +59,9 @@ const App = () => {
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
-    }
       const newNominatedList = [...nominatedID, movie.imdbID];
       setNominatedID(newNominatedList);
+    }
   };
 
   const removeNomination = (movie) => {
