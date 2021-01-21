@@ -2,6 +2,11 @@
   border-radius: 5px;
   height: 30px;
   border: #050505 2px solid;
+  background-image: url('../searchIcon.png');
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  background-position: 10px 50%;
+  padding: 10px 10px 10px 40px;
 }
 
 .search-bar:focus::placeholder {
