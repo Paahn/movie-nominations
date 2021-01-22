@@ -3,7 +3,7 @@ import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 import "../styles/AddNomination.css";
 
 const AddNomination = ({ active, inactive }) => {
-  console.log(`Active? ${active} Inactive? ${inactive}`);
+
   return (
     <div className="nomination-container">
       <span 
