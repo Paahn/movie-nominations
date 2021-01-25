@@ -77,7 +77,7 @@ const App = () => {
   return (
     <div className="shoppies-app">
       <div className="heading">
-        <h1>The Shoppies</h1>
+        <h1 className="shoppies-title">The Shoppies</h1>
       </div>
       <div>
         <SearchBar 
@@ -97,7 +97,7 @@ const App = () => {
       </div>
       <h1 className="heading">My Nominations</h1>
       {nominations.length === 5 ? <div className="banner">Nominations Complete!</div> : <></>}
-      <div className="container">
+      <div className="container nominated-movies-container">
         <MovieList
           movies={nominations}
           nominateComponent={RemoveNomination}

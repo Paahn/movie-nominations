@@ -26,6 +26,10 @@ body {
   flex-wrap: nowrap;
 }
 
+.shoppies-app > .nominated-movies-container {
+  justify-content: center;
+}
+
 .banner {
   display: flex;
   justify-content: center;
