@@ -8,13 +8,17 @@ body {
 }
 
 .heading {
-  color: #d6d0d0;
+  color: #00e4ab;
   font-size: 36px;
 }
 
 .container {
   display: flex;
   margin: 0 20px;
+}
+
+.shoppies-title {
+  color: #00e4ab;
 }
 
 .shoppies-app > .container {
@@ -26,8 +30,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rebeccapurple;
-  color: #d6d0d0;
+  background-color: #ffdd30;
+  color: #000000;
   height: 100px;
   width: 300 px;
   font-size: 36px;
